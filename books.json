@@ -1,18 +1,1 @@
-[
-{
-    "id": 1,
-    "name": "book1"
-},
-{
-    "id": 2,
-    "name": "book2"
-},
-{
-    "id": 3,
-    "name": "book3"
-},
-{
-    "id": 4,
-    "name": "book4"
-}
-]
+[{"id":1,"name":"hfi","author":"sda"},{"id":2,"name":"book2","author":"author2"},{"id":3,"name":"book3","author":"author3"},{"id":4,"name":"book4","author":"author4"}]
