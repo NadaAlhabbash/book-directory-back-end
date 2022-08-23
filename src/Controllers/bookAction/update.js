@@ -1,11 +1,13 @@
 const { readJson, writeJson } = require("../../Database/JSON");
-const {validateBookPUT} = require('../../util/index')
-
+const { validateBookPUT } = require("../../util/index");
 
 const updateBook = (req, res, data) => {
   const books = JSON.parse(data);
   const book = books.find((c) => c.id === parseInt(req.params.id));
-  if (!book) res.status(404).send("This book id is not found");
+  if (!book || book.deleted !== 'false'){
+    res.status(404).send("This book id is not found");
+    return;
+  }
   const { error } = validateBookPUT(req.body);
   if (error) {
     res.status(400).send(error.details[0].message);
@@ -15,9 +17,8 @@ const updateBook = (req, res, data) => {
       id: book.id,
       name: req.body.name || book.name,
       author: req.body.author || book.author,
+      deleted: book.deleted,
     };
-    // if (!updated.name) updated.name = book.name;
-    // if (!updated.author) updated.author = book.author;
 
     let index = books.indexOf(book);
     books.splice(index, 1, updated);

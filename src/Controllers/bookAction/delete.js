@@ -6,11 +6,12 @@ const deletBook = (req, res, data) => {
   if (!book) {
     res.status(404).send("This book id is not found");
   } else {
-    const index = books.indexOf(book);
-    books.splice(index, 1);
+    book.deleted='true'
     writeJson(books, res);
 
-    res.status(200, { "Content-Type": "application/json" }).send(books);
+    res
+      .status(200, { "Content-Type": "application/json" })
+      .send(`Book with id ${book.id} has been deleted`);
   }
 };
 
