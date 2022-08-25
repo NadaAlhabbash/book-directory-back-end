@@ -4,24 +4,14 @@ const controllers = require('../Controllers/index');
 const web = express.Router();
 web.use(express.json());
 
-web.get("/books", (req, res) => {
-  controllers.allBookscb(req, res);
-});
+web.get("/", controllers.allBookscb);
 
-web.get("/books/:id", (req, res) => {
-  controllers.oneBookcb(req, res);
-});
+web.get("/:id", controllers.oneBookcb);
 
-web.post("/books", (req, res) => {
-  controllers.postBookcb(req, res);
-});
+web.post("/", controllers.postBookcb);
 
-web.put("/books/:id", (req, res) => {
-  controllers.updateBookcb(req, res);
-});
+web.put("/:id", controllers.updateBookcb);
 
-web.delete("/books/:id", (req, res) => {
-  controllers.deletBookcb(req, res);
-});
+web.delete("/:id", controllers.deletBookcb);
 
 module.exports = web;
