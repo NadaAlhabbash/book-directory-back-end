@@ -1,5 +1,5 @@
 const { onebookq } = require('../../Database/queries/index');
-const {CostumError} = require('../../Routes/errorHandler');
+const {CostumError} = require('../errorHandler/errorHandler');
 // const queries = require ('../../Database/queries');
 // const pool = require('../../Database/config/db');
 
