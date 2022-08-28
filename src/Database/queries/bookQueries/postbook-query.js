@@ -1,4 +1,4 @@
-const connection = require("../../config/db");
+const connection = require("../../config/connection");
 
 const query = `INSERT INTO book (name, author, edition, img) 
                 VALUES ($1,$2,$3,$4)`;

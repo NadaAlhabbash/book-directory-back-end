@@ -1,4 +1,4 @@
-const connection = require("../../config/db");
+const connection = require("../../config/connection");
 
 const query = `UPDATE book
                 SET name = $1, author = $2, edition = $3, img = $4 

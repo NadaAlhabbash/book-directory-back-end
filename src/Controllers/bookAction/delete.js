@@ -1,4 +1,4 @@
-const { CostumError } = require("../../Routes/errorHandler");
+const { CostumError } = require("../errorHandler/errorHandler");
 const { deletebookq, onebookq } = require("../../Database/queries/index");
 
 // const { readJson, writeJson } = require("../../Database/JSON");

@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const web = require("./Routes/routes");
-const {errorHandler} = require('./Routes/errorHandler')
+const {errorHandler} = require('./Controllers/errorHandler/errorHandler')
 require('dotenv').config();
 
 app.use(express.json());
